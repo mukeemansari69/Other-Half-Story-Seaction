@@ -93,9 +93,9 @@
   background-color: #ffffff;
   color: #222222;
   font-family: 'Poppins', sans-serif;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-bottom: 350px;
+ /*  padding-left: 15px;
+  padding-right: 15px */;
+  margin-bottom: 340px; /* Reduced bottom margin for better mobile spacing */
 }
 
 @media (max-width: 768px) {
@@ -107,6 +107,12 @@
   }
   .story-section blockquote.custom-blockquote p {
     font-size: 1rem;
+  }
+  .story-section .col-lg-6.col-md-12:first-child {
+    order: 1;
+  }
+  .story-section .col-lg-6.col-md-12:last-child {
+    order: 2;
   }
 }
 
@@ -129,7 +135,7 @@
   font-style: italic;
 }
 
-/* ################### CSS for Heart Behind SEcation ##################### */
+/* ########################################################################################################################        CSS for Heart Behind SEcation            ########################################################################## */
 
 
 /* Overall Section Styling */
@@ -196,7 +202,7 @@
     /* You would add a play icon here, e.g., with background-image, SVG, or a font icon */
 }
 
-/* ###############################################"The Heart Behind Oggie" Container ##############################################*/
+/* ###################################################################################################################           "The Heart Behind Oggie" Container           ##############################################################*/
 .oggie-title-container {
     width: 90%;
     max-width: 695px;
@@ -379,17 +385,100 @@
         padding: 0 1rem;
     }
 }
+@media (max-width: 768px) {
+    /* VIDEO: Contained and responsive inside background */
+    .main-visual-area {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        max-height: 50vh; /* Keeps video small on mobile */
+        overflow: hidden;
+    }
+
+    .video-wrapper video {
+        width: 100%;
+        height: auto;
+        object-fit: contain; /* Keeps full video visible inside box */
+        display: block;
+        margin-left: -25%;
+        margin-top: 4%;
+    }
+
+    /* Hide dog image */
+    .dog-image {
+        display: none;
+    }
+
+    /* Middle section - Title container */
+    .oggie-title-container {
+        width: 90%;
+        margin: 1.5rem auto;
+        text-align: center;
+    }
+
+    .oggie-title-container h2 {
+        font-size: 6vw; /* Responsive font size */
+        line-height: 1.2;
+        margin-top: 1rem;
+    }
+
+    .oggie-title-container .philosophy-label {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    /* Points section */
+    .points-wrapper {
+        width: 90%;
+        max-width: 100%;
+        gap: 2rem;
+        padding: 1rem 0 2rem 0;
+    }
+
+    .point-number {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .point-title {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .point-description {
+        font-size: 14px;
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+
+    .point-container:not(:last-child)::after {
+        bottom: -1rem;
+        height: 1.5rem;
+    }
+
+    .main-page-section {
+        padding-bottom: 2rem;
+        background-color: #fff; /* Optional: fallback in case video is too small */
+    }
+}
 
 
-/* ################################# Our Mession section ############################# */
 
+/* #############################################################################################################          Our Mession section                    ###################################################################################### */
 .our-mission {
-  height: 548px;
+  height: auto;
   background-color: #0F4A12;
   color: white;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  padding-top: 30px;
+  padding: 30px 15px;
 }
 
 .mission-heading {
@@ -400,15 +489,22 @@
 
 .mission-subtext {
   font-size: 16px;
-  margin-top: 15px;
   line-height: 1.6;
   margin-top: 3rem;
+}
+
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .icon-row .icon-item {
   width: 150px;
   font-size: 18px;
   font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
 
 .icon-item img {
@@ -418,24 +514,115 @@
 
 .mission-container {
   max-width: 1179px;
-  height: 181px;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 
 .icon-row-container {
   max-width: 1440px;
-  height: 180px;
+  margin-bottom: 2rem;
+  padding: 0 10px;
+}
+
+/* ---------- Responsive Styles ---------- */
+@media (max-width: 1024px) {
+  .mission-heading {
+    font-size: 40px;
+  }
+
+  .mission-subtext {
+    font-size: 15px;
+  }
+
+  .icon-row .icon-item {
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-heading {
+    font-size: 32px;
+  }
+
+  .mission-subtext {
+    font-size: 14px;
+    margin-top: 2rem;
+  }
+
+  .icon-row .icon-item {
+    width: 45%; /* 2 items per row */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-heading {
+    font-size: 28px;
+  }
+
+  .mission-subtext {
+    font-size: 13px;
+    margin-top: 1.5rem;
+  }
+
+  .icon-row .icon-item {
+    width: 100%; /* 1 item per row */
+  }
+
+  .icon-item img {
+    max-width: 80px;
+  }
 }
 
 
-/* ############################################## Dog People Seaction ############################################################### */
+@media (max-width: 768px) {
+  .mission-heading {
+    font-size: 32px;
+  }
 
+  .mission-subtext {
+    font-size: 14px;
+    margin-top: 1.5rem;
+    line-height: 1.6;
+  }
 
+  .icon-row {
+    justify-content: center;
+    gap: 16px 10px;
+  }
 
+  .icon-item {
+    width: 30%; /* 3 icons per row */
+    font-size: 12px;
+  }
+
+  .icon-item img {
+    max-width: 55px;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-heading {
+    font-size: 26px;
+  }
+
+  .mission-subtext {
+    font-size: 13px;
+  }
+
+  .icon-item {
+    font-size: 11px;
+  }
+
+  .icon-item img {
+    max-width: 48px;
+  }
+}
+
+/* #################################################################################################           Made By Dog People Seaction                         ################################################################################### */
 
 .dog-people-section {
   background-color: #FAF9F5;
-  
   width: 100%;
   padding: 60px 20px;
   margin: 0 auto;
@@ -461,10 +648,16 @@
   margin-bottom: 64px;
 }
 
+.card-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
 .card-row {
+  display: flex;
+  gap: 24px;
   max-width: 1440px;
   margin: 0 auto;
-  gap: 24px;
 }
 
 .dog-card {
@@ -486,7 +679,6 @@
   display: block;
 }
 
-/* Overlay */
 .overlay {
   position: absolute;
   top: 0; left: 0;
@@ -494,78 +686,118 @@
   height: 100%;
   padding: 20px;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-start;
   border-radius: 16px;
   transition: background-color 0.3s ease;
+  flex-direction: column;
 }
 
-/* Default Overlay Colors */
 .overlay-dark .overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* #00000080 */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .overlay-light .overlay {
-  background-color: rgba(0, 0, 0, 0.2); /* #00000033 */
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* Card Text */
 .card-text {
   color: white;
   font-size: 14px;
-  transition: transform 0.3s ease;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
-.card-text span {
+.card-title {
+  text-align: center;
+  margin-top: 72%;
+  transform: translateY(150%);
+  transition: all 0.3s ease;
+}
+
+.card-title h3 {
+  margin-bottom: 5px;
+}
+
+.card-title span {
   font-size: 12px;
   opacity: 0.8;
 }
 
-/* Hover Zoom Effect */
-.dog-card:hover .card-text {
-  transform: scale(1.05);
+.card-description {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
-/* Responsive Styles */
+.dog-card:hover .card-title {
+  transform: translateY(0%);
+}
+
+.dog-card:hover .card-description {
+  opacity: 1;
+  max-height: 200px;
+}
+
+.carousel-lines {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.carousel-lines .line {
+  display: inline-block;
+  width: 30px;
+  height: 6px;
+  background-color: #ccc;
+  margin: 0 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-lines .line.active {
+  background-color: #E8754C;
+}
+
 @media (max-width: 768px) {
   .card-row {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
   }
 
   .dog-card {
-    max-width: 90%;
-  }
-
-  .heading-container {
-    width: 100%;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    max-width: 100%;
   }
 }
-
-
-/* ##################################################################    our Next Step Seaction ############################################# */
+/* #################################################################################################################################    our Next Step Seaction                     ################################################################## */
 
 
 .our-next-step-section {
   width: 100%;
-  min-height: 663px;
   background-color: #ffffff;
 }
 
 .content-card {
-  max-width: 500px;
-  padding: 20px;
+  max-width: 71%;
+  margin-right: 48px;
 }
 
 .step-heading {
   font-family: 'Luckiest Guy', cursive;
-  font-size: 32px;
+  font-size: 48px;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .step-paragraph {
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
 }
 
@@ -573,13 +805,13 @@
   list-style: disc;
   padding-left: 20px;
   color: #222;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .mission-box {
   background-color: #144d00;
   color: #EBF466;
-  font-size: 13px;
+  font-size: 18px;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -591,18 +823,37 @@
   border-radius: 0;
 }
 
-/* Responsive tweak */
+/* ✅ Mobile responsive order and spacing */
 @media (max-width: 768px) {
-  .our-next-step-section {
-    padding: 40px 10px;
-  }
-
   .content-card {
     text-align: center;
     max-width: 100%;
+    margin: 20px auto;
+  }
+
+  .step-paragraph,
+  .step-list {
+    font-size: 16px;
+    padding: 0 10px;
   }
 
   .step-list {
     text-align: left;
+  }
+
+  .mission-box {
+    font-size: 16px;
+    padding: 15px;
+    margin: 20px 10px;
+  }
+
+  .img-fluid.object-cover {
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  /* Hide duplicate heading inside .content-card on mobile */
+  .content-card .step-heading {
+    display: none;
   }
 }

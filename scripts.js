@@ -46,3 +46,18 @@ window.onload = () => {
     playButton.style.display = 'flex';
   }
 };
+
+
+/* ########################################################################################################  Made by Dog People Seaction  sliding image             ################################################### */  
+
+function scrollToCard(index) {
+    const slider = document.getElementById('slider');
+    const cardWidth = slider.children[0].offsetWidth;
+    slider.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+
+    const dots = document.querySelectorAll('.carousel-lines .line');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
