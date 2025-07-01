@@ -546,52 +546,15 @@
   .mission-subtext {
     font-size: 14px;
     margin-top: 2rem;
-  }
-
-  .icon-row .icon-item {
-    width: 45%; /* 2 items per row */
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .mission-heading {
-    font-size: 28px;
-  }
-
-  .mission-subtext {
-    font-size: 13px;
-    margin-top: 1.5rem;
-  }
-
-  .icon-row .icon-item {
-    width: 100%; /* 1 item per row */
-  }
-
-  .icon-item img {
-    max-width: 80px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .mission-heading {
-    font-size: 32px;
-  }
-
-  .mission-subtext {
-    font-size: 14px;
-    margin-top: 1.5rem;
     line-height: 1.6;
   }
 
   .icon-row {
-    justify-content: center;
     gap: 16px 10px;
   }
 
-  .icon-item {
-    width: 30%; /* 3 icons per row */
+  .icon-row .icon-item {
+    width: 30%;
     font-size: 12px;
   }
 
@@ -608,9 +571,11 @@
 
   .mission-subtext {
     font-size: 13px;
+    margin-top: 1.5rem;
   }
 
-  .icon-item {
+  .icon-row .icon-item {
+    width: 45%; /* 👈 This will ensure 2 items per row */
     font-size: 11px;
   }
 
